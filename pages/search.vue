@@ -91,11 +91,20 @@ export default {
             if (response.ok) {
                 const jokesData = await response.json()
 
-                // jokesData object is in like bellow
+                // jokesData object is like bellow
                 // {
                 //     total: Integer,
                 //     result: Array of jokes
                 // }
+
+                // If it is an 'I am lucky' search, return the first result
+                if (query.l && jokesData.total) {
+                    return {
+                        jokes: [jokesData.result[0]],
+                        totalJokes: 1,
+                        searchText
+                    }
+                }
 
                 return {
                     jokes: jokesData.result,

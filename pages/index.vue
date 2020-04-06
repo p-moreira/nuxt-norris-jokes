@@ -29,11 +29,7 @@
                 <!-- Content section -->
                 <section class="o-content o-wrapper o-wrapper--centered-content o-wrapper--row-gap--large o-header-section__content">
 
-                    <m-search />
-
-                    <p class="a-text">
-                        I'm luckly
-                    </p>
+                    <m-search show-i-am-lucky />
 
                 </section>
 
@@ -54,6 +50,12 @@ export default {
 
     components: {
         MSearch
+    },
+
+    methods: {
+        searchIAmLucky () {
+
+        }
     }
 
 }
