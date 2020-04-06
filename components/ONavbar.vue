@@ -14,6 +14,10 @@
                 >
             </figure>
 
+            <h1 class="a-title a-title--level-1 a-navbar__title">
+                The truth about Chuck Norris
+            </h1>
+
             <m-search class="m-navbar__search" />
 
         </div>
@@ -48,5 +52,11 @@ export default {
 /* m-navbar__search component */
 .m-navbar__search {
     max-width: 34.5rem;
+}
+
+/* a-navbar__title component */
+.a-navbar__title {
+    font-size: calc(var(--title-level-1) / 1.5);
+    text-align: center;
 }
 </style>

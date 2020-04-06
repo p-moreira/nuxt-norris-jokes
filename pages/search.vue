@@ -3,7 +3,10 @@
     <!-- Search results -->
     <main class="p-search">
 
-        <section class="o-section o-search__content">
+        <section
+            v-if="jokes[0]"
+            class="o-section o-search__content"
+        >
 
             <div class="o-wrapper o-wrapper--padding-section o-wrapper--boxed o-search-content__wrapper">
 
@@ -21,7 +24,27 @@
 
         </section>
 
-        <footer class="o-section o-search__footer">
+        <section
+            v-else
+            class="o-section"
+        >
+
+            <div class="o-wrapper o-wrapper--padding-section o-wrapper--boxed">
+
+                <div class="m-message-box">
+                    <p class="a-text a-text--large">
+                        {{ `Oops! There is no jokes with the search term: "${searchText}"` }}
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <footer
+            v-if="jokes[0]"
+            class="o-section o-search__footer"
+        >
 
             <div class="o-wrapper o-wrapper-centered-content o-wrapper--boxed o-search-footer__wrapper">
 
@@ -76,7 +99,8 @@ export default {
 
                 return {
                     jokes: jokesData.result,
-                    totalJokes: jokesData.total
+                    totalJokes: jokesData.total,
+                    searchText
                 }
             } else {
                 // Show the 'no jokes' message
@@ -92,20 +116,22 @@ export default {
         return {
 
             jokes: [
-                {
-                    // "categories": [category1, category2],
-                    // "created_at": "2020-01-05 13:42:18.823766",
-                    // "icon_url": "https://assets.chucknorris.host/img/avatar/chuck-norris.png",
-                    // "id": "WrRWYZGRQrik9_aPy8iyMw",
-                    // "updated_at": "2020-01-05 13:42:18.823766",
-                    // "url": "https://api.chucknorris.io/jokes/WrRWYZGRQrik9_aPy8iyMw",
-                    // "value": "Chuck Norris ate a 72lb steak in 60 minutes"
-                }
+                // {
+                //      "categories": [category1, category2],
+                //      "created_at": "2020-01-05 13:42:18.823766",
+                //      "icon_url": "https://assets.chucknorris.host/img/avatar/chuck-norris.png",
+                //      "id": "WrRWYZGRQrik9_aPy8iyMw",
+                //      "updated_at": "2020-01-05 13:42:18.823766",
+                //      "url": "https://api.chucknorris.io/jokes/WrRWYZGRQrik9_aPy8iyMw",
+                //      "value": "Chuck Norris ate a 72lb steak in 60 minutes"
+                // }
             ],
 
             totalJokes: 0,
 
-            currentPage: 1
+            currentPage: 1,
+
+            message: ''
         }
     },
 
@@ -160,6 +186,14 @@ export default {
 /* o-search-footer__wrapper component */
 .o-search-footer__wrapper {
     padding: 0 var(--padding-section) var(--padding-section);
+}
+
+.m-message-box {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.05);
+    text-align: center;
+    padding: var(--padding-section);
+    border-radius: 0.3125rem;
 }
 
 .a-quote__text::before {

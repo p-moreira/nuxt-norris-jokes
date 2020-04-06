@@ -490,14 +490,14 @@ a:hover {
 }
 
 .a-button--disabled {
-    background-color: var(--color-onSurface-low, rgba(0, 9, 51, 0.20));
-    color: var(--color-onSurface-low, rgba(0, 9, 51, 0.40));
+    background-color: var(--color-on-surface-low);
+    color: var(--color-on-surface-low);
     border: 0;
 }
 
 .a-button--disabled:hover {
-    background-color: var(--color-onSurface-low, rgba(0, 9, 51, 0.20));
-    color: var(--color-onSurface-low, rgba(0, 9, 51, 0.40));
+    background-color: var(--color-on-surface-low);
+    color: var(--color-on-surface-low);
     border: 0;
 }
 
@@ -526,6 +526,10 @@ a:hover {
     font-size: var(--text);
     line-height: 1.4;
     color: var(--color-on-surface-medium);
+}
+
+.a-text--large {
+    font-size: var(--text-large);
 }
 
 /* a-footer__text component */

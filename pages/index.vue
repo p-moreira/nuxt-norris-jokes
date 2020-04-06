@@ -40,23 +40,19 @@
 
         </section>
 
-        <o-footer fixed-bottom />
-
     </main>
 
 </template>
 
 <script>
 import MSearch from '@/components/MSearch'
-import OFooter from '@/components/OFooter'
 
 export default {
 
     name: 'PHome',
 
     components: {
-        MSearch,
-        OFooter
+        MSearch
     }
 
 }
