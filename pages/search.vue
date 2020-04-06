@@ -3,9 +3,9 @@
     <!-- Search results -->
     <main class="p-search">
 
-        <section
+        <o-section
             v-if="!errorMessage"
-            class="o-section o-search__content"
+            class="o-search__content"
         >
 
             <div class="o-wrapper o-wrapper--padding-section o-wrapper--boxed o-wrapper--row-gap--small">
@@ -37,12 +37,9 @@
 
             </div>
 
-        </section>
+        </o-section>
 
-        <section
-            v-else
-            class="o-section"
-        >
+        <o-section v-else>
 
             <div class="o-wrapper o-wrapper--padding-section o-wrapper--boxed">
 
@@ -54,19 +51,24 @@
 
             </div>
 
-        </section>
+        </o-section>
 
     </main>
 
 </template>
 
 <script>
+import OSection from '@/components/OSection'
 
 export default {
 
     name: 'PSearch',
 
     layout: 'searchresult',
+
+    components: {
+        OSection
+    },
 
     async asyncData ({ $http, query, redirect, error }) {
         const searchText = query.q

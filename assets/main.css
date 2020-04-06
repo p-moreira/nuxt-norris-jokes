@@ -275,13 +275,6 @@ a:hover {
 /* Organisms components */
 /* ********** */
 
-/* o-section component */
-.o-section {
-    width: 100%;
-    display: grid;
-    justify-items: center;
-}
-
 /* o-wrapper component */
 .o-wrapper {
     width: 100%;

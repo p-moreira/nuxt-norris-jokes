@@ -2,7 +2,7 @@
 
     <main class="p-home">
 
-        <section class="o-section o-header-section">
+        <o-section class="o-header-section">
 
             <div class="o-wrapper o-wrapper--centered-content o-wrapper--row-gap--large o-wrapper--padding-section o-wrapper--columns o-header-section__wrapper">
 
@@ -35,13 +35,14 @@
 
             </div>
 
-        </section>
+        </o-section>
 
     </main>
 
 </template>
 
 <script>
+import OSection from '@/components/OSection'
 import MSearch from '@/components/MSearch'
 
 export default {
@@ -49,6 +50,7 @@ export default {
     name: 'PHome',
 
     components: {
+        OSection,
         MSearch
     }
 
