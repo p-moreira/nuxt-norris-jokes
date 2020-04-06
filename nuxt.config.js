@@ -41,8 +41,22 @@ export default {
     ** Nuxt.js modules
     */
     modules: [
-        '@nuxtjs/pwa'
+        '@nuxtjs/pwa',
+        '@nuxt/http'
     ],
+    /*
+    ** http module setup
+    */
+    http: {
+        // proxyHeaders: false,
+        proxy: true
+    },
+    proxy: {
+        '/api/': {
+            target: 'https://api.chucknorris.io',
+            pathRewrite: { '^/api/': '' }
+        }
+    },
     /*
     ** Build configuration
     */
