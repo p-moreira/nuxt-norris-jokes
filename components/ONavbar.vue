@@ -5,15 +5,19 @@
 
         <div class="o-wrapper o-wrapper--centered-content o-wrapper--row-gap--normal o-navbar__wrapper">
 
-            <figure>
-                <img
-                    class="a-navbar__image"
-                    srcset="@/assets/image-chuck-norris-navbar-xs.png,
-                            @/assets/image-chuck-norris-navbar-xs-2x.png, 2x"
-                    src="@/assets/image-chuck-norris-navbar-xs-2x.png"
-                    alt="Chuck Norris"
-                >
-            </figure>
+            <n-link to="/">
+
+                <figure>
+                    <img
+                        class="a-navbar__image"
+                        srcset="@/assets/image-chuck-norris-navbar-xs.png,
+                                @/assets/image-chuck-norris-navbar-xs-2x.png, 2x"
+                        src="@/assets/image-chuck-norris-navbar-xs-2x.png"
+                        alt="Chuck Norris"
+                    >
+                </figure>
+
+            </n-link>
 
             <h1 class="a-title a-title--level-1 a-navbar__title">
                 The truth about Chuck Norris
@@ -64,5 +68,6 @@ export default {
 /* a-navbar__image component */
 .a-navbar__image {
     width: 4rem;
+    cursor: pointer;
 }
 </style>
