@@ -207,7 +207,6 @@ export default {
     content: url("~assets/image-quotation-mark.svg");
     display: block;
     margin-bottom: calc(var(--space-grid) / 2);
-    word-break: break-word;
 }
 
 .a-search-footer__button {
