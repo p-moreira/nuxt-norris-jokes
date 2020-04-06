@@ -430,7 +430,6 @@ a:hover {
     padding: 1rem;
     background-color: transparent;
     transition: all 0.3s;
-    height: 3.5rem;
 }
 
 .a-input::placeholder {
@@ -461,6 +460,7 @@ a:hover {
 .a-search__input {
     border-radius: 0.3125rem 0 0 0.3125rem;
     border-right: none;
+    height: 3.5rem;
 }
 
 .a-search__input:focus {

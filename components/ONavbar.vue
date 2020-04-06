@@ -56,7 +56,7 @@ export default {
 
 /* a-navbar__title component */
 .a-navbar__title {
-    font-size: calc(var(--title-level-1) / 1.5);
+    font-size: calc(var(--title-level-1) / 1.6);
     text-align: center;
 }
 </style>
