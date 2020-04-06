@@ -70,7 +70,7 @@ export default {
         iAmLuckySearch () {
             if (this.searchText.isValid()) {
                 // Go to the /search route passing the search text and
-                // the l=true query param to indicate it is a 'I am Lucky' search
+                // the l=true query param to indicate it is a 'I am lucky' search
                 this.$router.push(`/search?q=${this.searchText.isValid()}&l=true`)
             }
         }

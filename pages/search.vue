@@ -78,9 +78,10 @@ export default {
     async asyncData ({ $http, query, redirect, error }) {
         const searchText = query.q
 
+        // If there is no search query param, redirect to the home
         if (!searchText) {
             console.log('no query')
-            return
+            redirect('/')
         }
 
         const url = `api/jokes/search?query=${searchText}`
