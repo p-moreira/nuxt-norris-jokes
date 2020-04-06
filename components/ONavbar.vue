@@ -7,6 +7,7 @@
 
             <figure>
                 <img
+                    class="a-navbar__image"
                     srcset="@/assets/image-chuck-norris-navbar-xs.png,
                             @/assets/image-chuck-norris-navbar-xs-2x.png, 2x"
                     src="@/assets/image-chuck-norris-navbar-xs-2x.png"
@@ -58,5 +59,10 @@ export default {
 .a-navbar__title {
     font-size: calc(var(--title-level-1) / 1.6);
     text-align: center;
+}
+
+/* a-navbar__image component */
+.a-navbar__image {
+    width: 4rem;
 }
 </style>

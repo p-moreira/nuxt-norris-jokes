@@ -380,11 +380,11 @@ a:hover {
 /* Molecules */
 /* ********** */
 
+/* m-header-section__image component */
 .m-header-section__image {
     width: 10.625rem;
 }
 
-/* m-header-section__image component */
 @media screen and (min-width: 1200px) {
     .m-header-section__image {
         display: none;
