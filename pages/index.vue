@@ -9,8 +9,9 @@
                 <!-- Header section -->
                 <header class="o-wrapper o-wrapper--centered-content o-wrapper--row-gap--large o-header-section__header">
 
-                    <figure class="m-header-section__image">
+                    <figure>
                         <img
+                            class="m-header-section__image"
                             srcset="@/assets/image-chuck-norris-xs.png,
                                     @/assets/image-chuck-norris-xs-2x.png, 2x"
                             src="@/assets/image-chuck-norris-xs-2x.png"
