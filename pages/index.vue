@@ -50,12 +50,6 @@ export default {
 
     components: {
         MSearch
-    },
-
-    methods: {
-        searchIAmLucky () {
-
-        }
     }
 
 }
