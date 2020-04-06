@@ -11,7 +11,9 @@
 
                     <figure class="m-header-section__image">
                         <img
-                            src="@/assets/image-chuck-norris-rounded-pb-1-lo.png"
+                            srcset="@/assets/image-chuck-norris-xs.png,
+                                    @/assets/image-chuck-norris-xs-2x.png, 2x"
+                            src="@/assets/image-chuck-norris-xs-2x.png"
                             alt="Chuck Norris"
                         >
                     </figure>

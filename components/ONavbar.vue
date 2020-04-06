@@ -7,7 +7,9 @@
 
             <figure>
                 <img
-                    src="@/assets/image-chuck-norris-rounded-navbar-pb-lo.png"
+                    srcset="@/assets/image-chuck-norris-navbar-xs.png,
+                            @/assets/image-chuck-norris-navbar-xs-2x.png, 2x"
+                    src="@/assets/image-chuck-norris-navbar-xs-2x.png"
                     alt="Chuck Norris"
                 >
             </figure>
