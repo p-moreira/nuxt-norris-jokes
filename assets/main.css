@@ -537,6 +537,7 @@ a:hover {
     font-size: var(--text);
     line-height: 1.4;
     color: var(--color-on-surface-medium);
+    word-break: break-word;
 }
 
 .a-text--large {

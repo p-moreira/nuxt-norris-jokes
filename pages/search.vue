@@ -4,49 +4,25 @@
     <main class="p-search">
 
         <section
-            v-if="jokes[0]"
+            v-if="!errorMessage"
             class="o-section o-search__content"
         >
 
-            <div class="o-wrapper o-wrapper--padding-section o-wrapper--boxed o-search-content__wrapper">
+            <div class="o-wrapper o-wrapper--padding-section o-wrapper--boxed o-wrapper--row-gap--small">
 
-                <article
-                    v-for="joke in currentJokes"
-                    :key="joke.id"
-                    class="m-quote"
-                >
-                    <p class="a-text a-quote__text">
-                        {{ joke.value }}
-                    </p>
-                </article>
+                <div class="o-wrapper o-search-content__body">
 
-            </div>
+                    <article
+                        v-for="joke in currentJokes"
+                        :key="joke.id"
+                        class="m-quote"
+                    >
+                        <p class="a-text a-quote__text">
+                            {{ joke.value }}
+                        </p>
+                    </article>
 
-        </section>
-
-        <section
-            v-else
-            class="o-section"
-        >
-
-            <div class="o-wrapper o-wrapper--padding-section o-wrapper--boxed">
-
-                <div class="m-message-box">
-                    <p class="a-text a-text--large">
-                        {{ `Oops! There is no jokes with the search term: "${searchText}"` }}
-                    </p>
                 </div>
-
-            </div>
-
-        </section>
-
-        <footer
-            v-if="jokes[0]"
-            class="o-section o-search__footer"
-        >
-
-            <div class="o-wrapper o-wrapper-centered-content o-wrapper--boxed o-search-footer__wrapper">
 
                 <button
                     :class="{
@@ -61,7 +37,24 @@
 
             </div>
 
-        </footer>
+        </section>
+
+        <section
+            v-else
+            class="o-section"
+        >
+
+            <div class="o-wrapper o-wrapper--padding-section o-wrapper--boxed">
+
+                <div class="m-error-box">
+                    <p class="a-text a-text--large">
+                        {{ errorMessage }}
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
 
     </main>
 
@@ -78,9 +71,10 @@ export default {
     async asyncData ({ $http, query, redirect, error }) {
         const searchText = query.q
 
-        // If there is no search query param, redirect to the home
+        // If there is no search query param, or
+        // the search query param is invalid, redirect to the home
         if (!searchText) {
-            console.log('no query')
+            console.error('Invalid search query param')
             redirect('/')
         }
 
@@ -110,15 +104,22 @@ export default {
                 return {
                     jokes: jokesData.result,
                     totalJokes: jokesData.total,
-                    searchText
+                    searchText,
+                    errorMessage: jokesData.total ? '' : `There is no jokes with the search term: "${searchText}"`
                 }
             } else {
-                // Show the 'no jokes' message
-                console.log('There is no jokes!')
+                // Show the error message
+                console.error('There is an error', response.error)
+                return {
+                    errorMessage: 'We can\'t show the search result now, please try again later!'
+                }
             }
         } catch (e) {
             // Show the network error message
-            console.log('API error', e)
+            console.error('There is an error', e)
+            return {
+                errorMessage: 'We can\'t show the search result now, please check your network connection and try again later!'
+            }
         }
     },
 
@@ -141,7 +142,7 @@ export default {
 
             currentPage: 1,
 
-            message: ''
+            errorMessage: ''
         }
     },
 
@@ -171,24 +172,20 @@ export default {
 </script>
 
 <style scoped>
-/* o-search-content__wrapper component */
-.o-search-content__wrapper {
-    padding-bottom: var(--space-grid);
-}
 @media screen and (min-width: 600px) {
-    .o-search-content__wrapper {
+    .o-search-content__body {
         display: block;
         column-count: 2;
         column-gap: calc(var(--space-grid) * 2);
     }
 }
 @media screen and (min-width: 900px) {
-    .o-search-content__wrapper {
+    .o-search-content__body {
         column-count: 3;
     }
 }
 @media screen and (min-width: 1200px) {
-    .o-search-content__wrapper {
+    .o-search-content__body {
         column-count: 4;
     }
 }
@@ -198,7 +195,7 @@ export default {
     padding: 0 var(--padding-section) var(--padding-section);
 }
 
-.m-message-box {
+.m-error-box {
     width: 100%;
     background-color: rgba(0, 0, 0, 0.05);
     text-align: center;
