@@ -48,7 +48,10 @@
                         class="o-header-section-body__wrapper"
                     >
 
-                        <m-search show-i-am-lucky />
+                        <m-search
+                            ref="mSearch"
+                            show-i-am-lucky
+                        />
 
                     </o-wrapper>
 
@@ -75,6 +78,10 @@ export default {
         OSection,
         OWrapper,
         MSearch
+    },
+
+    mounted () {
+        setTimeout(() => { this.$refs.mSearch.$refs.input.focus() }, 500)
     }
 
 }

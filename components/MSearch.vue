@@ -6,6 +6,7 @@
 
             <input
                 id="search-text"
+                ref="input"
                 v-model="searchText.value"
                 type="text"
                 name="search-text"
@@ -74,6 +75,10 @@ export default {
                     this.$router.push(`/search?q=${validText}&l=true`)
                 }
             }
+        },
+
+        focus () {
+            this.$refs.input.focus()
         }
 
     }
