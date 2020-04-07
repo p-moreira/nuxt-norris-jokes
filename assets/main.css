@@ -178,7 +178,7 @@
     /* 16px */
     --padding-section: calc(var(--space-grid) * 3);
     /* 24px */
-    --boxed-width: 68rem;
+    --boxed-width: 75rem;
 
     word-spacing: 1px;
     -ms-text-size-adjust: 100%;
