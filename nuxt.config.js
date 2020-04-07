@@ -45,7 +45,7 @@ export default {
         '@nuxt/http'
     ],
     /*
-    ** http module setup
+    ** http module setup: https://http.nuxtjs.org/
     */
     http: {
         proxyHeaders: false,
@@ -67,5 +67,11 @@ export default {
         */
         extend (config, ctx) {
         }
+    },
+
+    // nuxt generate setup
+    generate: {
+        // See: https://nuxtjs.org/faq/netlify-deployment/
+        fallback: true
     }
 }
