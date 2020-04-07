@@ -1,0 +1,64 @@
+image:
+    name: docker/compose:1.21.2
+    entrypoint: ["/bin/sh", "-c"]
+# image: docker:stable
+services:
+  - docker:19.03.5-dind
+
+stages:
+  - build
+  - deploy
+
+variables:
+  DOCKER_HOST: tcp://docker:2375
+  DOCKER_DRIVER: overlay2
+  TARGET_PATH: /opt/app
+  REPO: registry.gitlab.com/pmoreira/nuxt-norris-jokes
+#   CONTAINER_RELEASE_IMAGE: $CI_REGISTRY_IMAGE:latest
+
+build:
+  stage: build
+  script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - docker-compose build
+    - docker-compose push
+#   except:
+#     - master
+
+deploy-staging:
+  stage: deploy
+  script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - apk add --update openssh-client
+    - eval $(ssh-agent -s)
+    - echo -n "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - ssh-keyscan $STAGING_SERVER_IP >> ~/.ssh/known_hosts
+    - ssh root@$STAGING_SERVER_IP mkdir -p $TARGET_PATH
+    - ssh root@$STAGING_SERVER_IP mkdir -p $TARGET_PATH/nginx
+    - scp docker-compose.yml root@$STAGING_SERVER_IP:$TARGET_PATH/docker-compose.yml
+    - scp nginx/default.conf root@$STAGING_SERVER_IP:$TARGET_PATH/nginx/default.conf
+    # - scp env/$CI_ENVIRONMENT_SLUG.yml $TARGET_HOST:$TARGET_PATH/docker-compose.yml
+    - ssh root@$STAGING_SERVER_IP "docker login -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD} ${CI_REGISTRY}; cd /opt/app; docker-compose pull; docker-compose stop nuxt; docker-compose rm -f nuxt; docker-compose up -d --force-recreate --remove-orphans --no-deps nuxt; docker-compose up -d --no-recreate --no-deps; docker system prune -a -f; rm -rf /var/lib/docker/aufs/diff/*-removing"
+  except:
+    - master
+
+deploy-production:
+  stage: deploy
+  script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - apk add --update openssh-client
+    - eval $(ssh-agent -s)
+    - echo -n "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - ssh-keyscan $PRODUCTION_SERVER_IP >> ~/.ssh/known_hosts
+    - ssh root@$PRODUCTION_SERVER_IP mkdir -p $TARGET_PATH
+    - ssh root@$PRODUCTION_SERVER_IP mkdir -p $TARGET_PATH/nginx
+    - scp docker-compose.yml root@$PRODUCTION_SERVER_IP:$TARGET_PATH/docker-compose.yml
+    - scp nginx/default-prod.conf root@$PRODUCTION_SERVER_IP:$TARGET_PATH/nginx/default.conf
+    # - scp env/$CI_ENVIRONMENT_SLUG.yml $TARGET_HOST:$TARGET_PATH/docker-compose.yml
+    - ssh root@$PRODUCTION_SERVER_IP "docker login -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD} ${CI_REGISTRY}; cd /opt/app; docker-compose pull; docker-compose stop nuxt; docker-compose rm -f nuxt; docker-compose up -d --force-recreate --remove-orphans --no-deps nuxt; docker-compose up -d --no-recreate --no-deps; docker system prune -a -f; rm -rf /var/lib/docker/aufs/diff/*-removing"
+  only:
+    - master
