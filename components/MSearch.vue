@@ -12,6 +12,7 @@
                 name="search-text"
                 placeholder="Search something"
                 class="a-input a-search__input"
+                @keyup.enter="search"
             >
 
             <button
