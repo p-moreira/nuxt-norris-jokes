@@ -48,7 +48,7 @@ export default {
     ** http module setup
     */
     http: {
-        // proxyHeaders: false,
+        proxyHeaders: false,
         proxy: true,
         https: process.env.NODE_ENV === 'production' ? 'true' : 'false'
     },
