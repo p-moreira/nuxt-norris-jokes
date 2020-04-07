@@ -8,9 +8,14 @@
             class="o-search__content"
         >
 
-            <div class="o-wrapper o-wrapper--padding-section o-wrapper--boxed o-wrapper--row-gap--small">
+            <o-wrapper
+                padding-section
+                boxed
+                row-gap-small
+                class=""
+            >
 
-                <div class="o-wrapper o-search-content__body">
+                <o-wrapper class="o-search-content__body">
 
                     <article
                         v-for="joke in currentJokes"
@@ -22,7 +27,7 @@
                         </p>
                     </article>
 
-                </div>
+                </o-wrapper>
 
                 <button
                     :class="{
@@ -35,13 +40,17 @@
                     {{ isLastPage ? 'No more jokes' : 'Load more' }}
                 </button>
 
-            </div>
+            </o-wrapper>
 
         </o-section>
 
         <o-section v-else>
 
-            <div class="o-wrapper o-wrapper--padding-section o-wrapper--boxed">
+            <o-wrapper
+                padding-section
+                boxed
+                class=""
+            >
 
                 <div class="m-error-box">
                     <p class="a-text a-text--large">
@@ -49,7 +58,7 @@
                     </p>
                 </div>
 
-            </div>
+            </o-wrapper>
 
         </o-section>
 
@@ -59,6 +68,7 @@
 
 <script>
 import OSection from '@/components/OSection'
+import OWrapper from '@/components/OWrapper'
 
 export default {
 
@@ -67,7 +77,8 @@ export default {
     layout: 'searchresult',
 
     components: {
-        OSection
+        OSection,
+        OWrapper
     },
 
     async asyncData ({ $http, query, redirect, error }) {
@@ -197,6 +208,7 @@ export default {
     padding: 0 var(--padding-section) var(--padding-section);
 }
 
+/* m-error-box component */
 .m-error-box {
     width: 100%;
     background-color: rgba(0, 0, 0, 0.05);
@@ -205,12 +217,14 @@ export default {
     border-radius: 0.3125rem;
 }
 
+/* a-quote__text component */
 .a-quote__text::before {
     content: url("~assets/image-quotation-mark.svg");
     display: block;
     margin-bottom: calc(var(--space-grid) / 2);
 }
 
+/* a-search-footer__button component */
 .a-search-footer__button {
     width: 100%;
 }

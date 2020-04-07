@@ -3,7 +3,11 @@
     <!-- navbar -->
     <header class="o-navbar">
 
-        <div class="o-wrapper o-wrapper--centered-content o-wrapper--row-gap--normal o-navbar__wrapper">
+        <o-wrapper
+            centered-content
+            row-gap-normal
+            class="o-navbar__wrapper"
+        >
 
             <n-link to="/">
 
@@ -25,18 +29,20 @@
 
             <m-search class="m-navbar__search" />
 
-        </div>
+        </o-wrapper>
 
     </header>
 
 </template>
 
 <script>
+import OWrapper from '@/components/OWrapper'
 import MSearch from '@/components/MSearch'
 
 export default {
 
     components: {
+        OWrapper,
         MSearch
     }
 

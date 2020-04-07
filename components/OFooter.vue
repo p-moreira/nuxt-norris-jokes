@@ -2,27 +2,41 @@
 
     <!-- Footer section -->
     <footer
-        id="footer"
+        id=""
         :class="{
             'o-footer': 1,
             'o-footer--fixed--bottom': fixedBottom,
-            'o-wrapper': 1,
-            'o-wrapper--centered-content': 1
         }"
     >
 
-        <p class="a-text a-footer__text">
-            powered by the chucknorris.io
-        </p>
+        <o-section>
+
+            <o-wrapper centered-content>
+
+                <p class="a-text a-footer__text">
+                    powered by the chucknorris.io
+                </p>
+
+            </o-wrapper>
+
+        </o-section>
 
     </footer>
 
 </template>
 
 <script>
+import OSection from '@/components/OSection'
+import OWrapper from '@/components/OWrapper'
+
 export default {
 
     name: 'OFooter',
+
+    components: {
+        OSection,
+        OWrapper
+    },
 
     props: {
         fixedBottom: {
@@ -36,6 +50,7 @@ export default {
 <style scoped>
 /* o-footer component */
 .o-footer {
+    width: 100%;
     background-color: var(--color-primary);
     padding: calc(var(--space) / 1.5);
     border-top-left-radius: 1.875rem;
