@@ -54,7 +54,6 @@ export default {
             // The user search text
             searchText: {
                 value: this.$route.query.q,
-                // value: this.$store.state.searchText,
                 isValid: () => this.searchText.value ? this.searchText.value.trim() : ''
             }
 
@@ -67,6 +66,8 @@ export default {
             const validText = this.searchText.isValid()
 
             if (validText) {
+                this.updateLoadingMessage()
+
                 if (isLuckySearch) {
                     // Go to the /search route passing the search text
                     this.$router.push(`/search?q=${validText}`)
@@ -80,6 +81,10 @@ export default {
 
         focus () {
             this.$refs.input.focus()
+        },
+
+        updateLoadingMessage () {
+            this.$store.dispatch('updateLoadingMessage')
         }
 
     }
