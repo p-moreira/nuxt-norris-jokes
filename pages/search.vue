@@ -17,15 +17,11 @@
 
                 <o-wrapper class="o-search-content__body">
 
-                    <article
+                    <m-quote
                         v-for="joke in currentJokes"
                         :key="joke.id"
-                        class="m-quote"
-                    >
-                        <p class="a-text a-quote__text">
-                            {{ joke.value }}
-                        </p>
-                    </article>
+                        :joke="joke"
+                    />
 
                 </o-wrapper>
 
@@ -44,12 +40,15 @@
 
         </o-section>
 
-        <o-section v-else>
+        <o-section
+            v-else
+            class="o-section-error"
+        >
 
             <o-wrapper
                 padding-section
                 boxed
-                class=""
+                class="o-section-error__wrapper"
             >
 
                 <div class="m-error-box">
@@ -69,6 +68,7 @@
 <script>
 import OSection from '@/components/OSection'
 import OWrapper from '@/components/OWrapper'
+import MQuote from '@/components/MQuote'
 
 export default {
 
@@ -78,7 +78,8 @@ export default {
 
     components: {
         OSection,
-        OWrapper
+        OWrapper,
+        MQuote
     },
 
     async asyncData ({ $http, query, redirect, error }) {
@@ -215,13 +216,6 @@ export default {
     text-align: center;
     padding: var(--padding-section);
     border-radius: 0.3125rem;
-}
-
-/* a-quote__text component */
-.a-quote__text::before {
-    content: url("~assets/image-quotation-mark.svg");
-    display: block;
-    margin-bottom: calc(var(--space-grid) / 2);
 }
 
 /* a-search-footer__button component */
