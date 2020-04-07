@@ -28,7 +28,7 @@
         <button
             v-show="showIAmLucky"
             class="a-button a-button--text a-lucky__button"
-            @click="iAmLuckySearch"
+            @click="search(true)"
         >
             I'm feeling lucky
         </button>
@@ -51,7 +51,8 @@ export default {
 
             // The user search text
             searchText: {
-                value: '',
+                value: this.$route.query.q,
+                // value: this.$store.state.searchText,
                 isValid: () => this.searchText.value ? this.searchText.value.trim() : ''
             }
 
@@ -60,18 +61,18 @@ export default {
 
     methods: {
 
-        search () {
-            if (this.searchText.isValid()) {
-                // Go to the /search route passing the search text
-                this.$router.push(`/search?q=${this.searchText.isValid()}`)
-            }
-        },
+        search (isLuckySearch) {
+            const validText = this.searchText.isValid()
 
-        iAmLuckySearch () {
-            if (this.searchText.isValid()) {
-                // Go to the /search route passing the search text and
-                // the l=true query param to indicate it is a 'I am lucky' search
-                this.$router.push(`/search?q=${this.searchText.isValid()}&l=true`)
+            if (validText) {
+                if (isLuckySearch) {
+                    // Go to the /search route passing the search text
+                    this.$router.push(`/search?q=${validText}`)
+                } else {
+                    // Go to the /search route passing the search text and
+                    // the l=true query param to indicate it is a 'I am lucky' search
+                    this.$router.push(`/search?q=${validText}&l=true`)
+                }
             }
         }
 

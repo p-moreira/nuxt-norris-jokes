@@ -22,7 +22,10 @@ module.exports = {
         ],
         "vue/html-indent": ["error", 4],
         "indent": ["error", 4],
-        "semi": ["error", "never", { "beforeStatementContinuationChars": "never" }],
+        "semi": ["error", "never", {
+            "beforeStatementContinuationChars": "never"
+        }],
         'no-console': process.env.NODE_ENV === 'production' ? 'on' : 'off',
+        // "space-before-function-paren": ["error", "never"],
     }
 }

@@ -28,6 +28,7 @@
                 <button
                     :class="{
                         'a-button': 1,
+                        'a-button--large': 1,
                         'a-button--disabled': isLastPage,
                         'a-search-footer__button': 1
                     }"
