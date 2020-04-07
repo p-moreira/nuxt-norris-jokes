@@ -42,7 +42,7 @@ $ yarn start
 
 ## Gitlab CI/CD deploy
 
-If you will host the code on Gitlab, the project includes all we need to setup the Gitlab CI/CD to build and deploy the app using staging and production ubuntu 16.04 servers.
+If you will host the code on Gitlab, the project includes all we need to setup the Gitlab CI/CD to build and deploy the app using staging and production servers.
 
 - /Dockerfile
 - /docker-compose.yml
