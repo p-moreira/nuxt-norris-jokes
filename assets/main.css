@@ -380,19 +380,19 @@ a:hover {
 }
 
 .a-button--chip {
-    font-weight: 400;
-    font-size: 0.875rem;
+    font-weight: 500;
+    font-size: 0.8125rem;
     padding: 4px var(--space-grid);
-    border: 1px solid var(--color-primary-light);
+    border: 2px solid var(--color-primary-light);
     border-radius: 1rem;
     background-color: transparent;
     color: var(--color-on-surface-medium);
 }
 
 .a-button--chip:hover {
-    border: 1px solid var(--color-secondary-light);
-    background-color: transparent;
-    color: var(--color-on-surface-medium);
+    border: 2px solid var(--color-secondary);
+    background-color: var(--color-secondary);
+    color: var(--color-on-secondary);
 }
 
 /* a-button--text */

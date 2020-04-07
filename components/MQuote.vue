@@ -22,6 +22,7 @@
                     class="m-quote-footer__categories"
                 >
 
+                    <!-- Category button -->
                     <button
                         v-for="category in joke.categories"
                         :key="category"
@@ -119,6 +120,21 @@ export default {
             return this.joke.updated_at ? formatDate(this.joke.updated_at) : ''
         }
     }
+
+    // methods: {
+
+    //     async searchByCategory (category) {
+    //         // api.searchByCategory(category)
+
+    //         const url =
+
+    //         try {
+    //         const response = await this.$http.get(url)
+
+    //         if (response.ok) {
+    //             const jokesData = await response.json()
+    //     }
+    // }
 
 }
 </script>

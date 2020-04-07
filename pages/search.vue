@@ -12,7 +12,7 @@
                 padding-section
                 boxed
                 row-gap-small
-                class=""
+                class="o-search-content__wrapper"
             >
 
                 <o-wrapper class="o-search-content__body">
@@ -26,6 +26,7 @@
                 </o-wrapper>
 
                 <button
+                    v-show="!$route.query.l"
                     :class="{
                         'a-button': 1,
                         'a-button--large': 1,

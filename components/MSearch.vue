@@ -69,12 +69,12 @@ export default {
                 this.updateLoadingMessage()
 
                 if (isLuckySearch) {
-                    // Go to the /search route passing the search text
-                    this.$router.push(`/search?q=${validText}`)
-                } else {
                     // Go to the /search route passing the search text and
                     // the l=true query param to indicate it is a 'I am lucky' search
                     this.$router.push(`/search?q=${validText}&l=true`)
+                } else {
+                    // Go to the /search route passing the search text
+                    this.$router.push(`/search?q=${validText}`)
                 }
             }
         },
