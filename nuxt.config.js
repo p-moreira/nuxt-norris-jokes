@@ -49,7 +49,8 @@ export default {
     */
     http: {
         // proxyHeaders: false,
-        proxy: true
+        proxy: true,
+        https: process.env.NODE_ENV === 'production' ? 'true' : 'false'
     },
     proxy: {
         '/api/': {
