@@ -79,52 +79,6 @@ a:hover {
     text-align: center;
 }
 
-/* a-input component */
-.a-input {
-    font-size: var(--font-size, 1rem);
-    color: var(--color-on-surface-medium);
-    border: 1px solid var(--color-on-surface-medium);
-    border-radius: 0.3125rem;
-    padding: 1rem;
-    background-color: transparent;
-    transition: all 0.3s;
-}
-
-.a-input::placeholder {
-    color: var(--color-on-surface-medium);
-}
-
-.a-input:-webkit-autofill {
-    animation-name: autofill;
-    animation-fill-mode: both;
-}
-
-.a-input:focus {
-    border: 1px solid var(--color-secondary);
-}
-
-.a-input--error {
-    border: 1px solid var(--color-error);
-}
-
-@keyframes autofill {
-    to {
-        color: var(--color-on-surface-medium);
-        background: transparent;
-    }
-}
-
-/* a-search__input component */
-.a-search__input {
-    border-radius: 0.3125rem 0 0 0.3125rem;
-    border-right: none;
-    height: 3.5rem;
-}
-
-.a-search__input:focus {
-    border-right: none;
-}
-
 /* a-text component */
 .a-text {
     font-size: var(--text);

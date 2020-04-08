@@ -4,16 +4,15 @@
 
         <div class="m-search__wrapper">
 
-            <input
-                id="search-text"
-                ref="input"
+            <a-input
+                id="search-input"
                 v-model="searchText.value"
                 type="text"
-                name="search-text"
+                name="search-input"
                 placeholder="Search something"
-                class="a-input a-search__input"
+                class="a-search__input"
                 @keyup.enter="search"
-            >
+            />
 
             <a-button
                 class="a-search__button"
@@ -41,6 +40,7 @@
 </template>
 
 <script>
+import AInput from '@/components/AInput'
 import AButton from '@/components/AButton'
 
 export default {
@@ -48,6 +48,7 @@ export default {
     name: 'MSearch',
 
     components: {
+        AInput,
         AButton
     },
 
@@ -117,6 +118,17 @@ export default {
 .m-search__wrapper {
     display: grid;
     grid-template-columns: 1fr auto;
+}
+
+/* a-search__input component */
+.a-search__input {
+    border-radius: 0.3125rem 0 0 0.3125rem;
+    border-right: none;
+    height: 3.5rem;
+}
+
+.a-search__input:focus {
+    border-right: none;
 }
 
 /* a-search__button component */
