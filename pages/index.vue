@@ -2,18 +2,18 @@
 
     <main class="p-home">
 
-        <o-section class="o-header-section">
+        <o-section class="o-header">
 
             <o-wrapper
                 centered-content
                 row-gap-large
                 padding-section
                 columns
-                class="o-header-section__wrapper"
+                class="o-header__wrapper"
             >
 
                 <!-- header -->
-                <header class="o-header-section__header">
+                <header class="o-header__header">
 
                     <o-wrapper
                         centered-content
@@ -40,12 +40,12 @@
                 </header>
 
                 <!-- body -->
-                <o-section class="o-header-section__body">
+                <o-section class="o-header__body">
 
                     <o-wrapper
                         centered-content
                         row-gap-large
-                        class="o-header-section-body__wrapper"
+                        class="o-header-body__wrapper"
                     >
 
                         <m-search
@@ -89,9 +89,9 @@ export default {
 </script>
 
 <style scoped>
-/* o-header-section component */
+/* o-header component */
 @media screen and (min-width: 1200px) {
-    .o-header-section {
+    .o-header {
         background-image: url("~assets/image-chuck-norris-lg.png");
         background-repeat: no-repeat;
         background-position: left;
@@ -102,39 +102,39 @@ export default {
 }
 
 @media screen and (min-width: 1200px) and (min-resolution: 192dpi) {
-    .o-header-section {
+    .o-header {
         background-image: url("~assets/image-chuck-norris-lg-2x.png");
     }
 }
 
-/* o-header-section__header component */
+/* o-header__header component */
 @media screen and (min-width: 600px) {
-    .o-header-section__header {
+    .o-header__header {
         grid-column: 1/9;
     }
 }
 
 @media screen and (min-width: 1200px) {
-    .o-header-section__header {
+    .o-header__header {
         grid-column: 1/13;
     }
 }
 
-/* o-header-section__body component */
+/* o-header__body component */
 @media screen and (min-width: 600px) {
-    .o-header-section__body {
+    .o-header__body {
         grid-column: 1/9;
     }
 }
 
 @media screen and (min-width: 900px) {
-    .o-header-section__body {
+    .o-header__body {
         grid-column: 2/8;
     }
 }
 
 @media screen and (min-width: 1200px) {
-    .o-header-section__body {
+    .o-header__body {
         grid-column: 4/10;
     }
 }
