@@ -85,7 +85,6 @@ export default {
     },
 
     async asyncData ({ $http, query, redirect, error }) {
-        console.log('asyncdata')
         const searchText = query.q
 
         // If there is no search query param, or
