@@ -30,10 +30,15 @@
                             >
                         </figure>
 
-                        <h1 class="a-title a-title--level-1 a-header__title">
+                        <a-title
+                            tag="h1"
+                            level1
+                            center
+                            class="a-header__title"
+                        >
                             The truth about<br>
                             Chuck Norris
-                        </h1>
+                        </a-title>
 
                     </o-wrapper>
 
@@ -69,6 +74,7 @@
 import OSection from '@/components/OSection'
 import OWrapper from '@/components/OWrapper'
 import MSearch from '@/components/MSearch'
+import ATitle from '@/components/ATitle'
 
 export default {
 
@@ -77,7 +83,8 @@ export default {
     components: {
         OSection,
         OWrapper,
-        MSearch
+        MSearch,
+        ATitle
     },
 
     mounted () {

@@ -37,9 +37,14 @@
 
             </section>
 
-            <h1 class="a-title a-title--level-1 a-navbar__title">
+            <a-title
+                tag="h1"
+                level4
+                center
+                class="a-navbar__title"
+            >
                 The truth about Chuck Norris
-            </h1>
+            </a-title>
 
             <m-search class="m-navbar__search" />
 
@@ -52,12 +57,14 @@
 <script>
 import OWrapper from '@/components/OWrapper'
 import MSearch from '@/components/MSearch'
+import ATitle from '@/components/ATitle'
 
 export default {
 
     components: {
         OWrapper,
-        MSearch
+        MSearch,
+        ATitle
     }
 
 }
@@ -88,10 +95,10 @@ export default {
 }
 
 /* a-navbar__title component */
-.a-navbar__title {
+/* .a-navbar__title {
     font-size: calc(var(--title-level-1) / 1.6);
     text-align: center;
-}
+} */
 
 /* a-navbar__image component */
 .a-navbar__image {

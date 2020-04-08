@@ -63,22 +63,6 @@ a:hover {
 /* Atoms components */
 /* ********** */
 
-/* a-title component */
-.a-title {
-    font-family: var(--font-family-title);
-    font-weight: var(--font-weight-title);
-    line-height: var(--line-height-title);
-}
-
-.a-title--level-1 {
-    font-size: var(--title-level-1);
-}
-
-/* a-header__title component */
-.a-header__title {
-    text-align: center;
-}
-
 /* a-text component */
 .a-text {
     font-size: var(--text);

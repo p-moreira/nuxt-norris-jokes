@@ -7,9 +7,13 @@
 
         <div class="m-loading__wrapper">
 
-            <h1 class="a-title a-title--level-1 a-loading__title">
+            <a-title
+                tag="h1"
+                level1
+                class="a-loading__title"
+            >
                 {{ loadingMessage }}
-            </h1>
+            </a-title>
 
             <p class="a-text a-loading__text">
                 waiting for the answers...
@@ -22,7 +26,15 @@
 </template>
 
 <script>
+import ATitle from '@/components/ATitle'
+
 export default {
+
+    name: 'MLoading',
+
+    components: {
+        ATitle
+    },
 
     data () {
         return {
