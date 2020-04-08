@@ -11,10 +11,25 @@
 
         <o-section>
 
-            <o-wrapper centered-content>
+            <o-wrapper
+                centered-content
+                row-gap-small
+            >
 
                 <p class="a-text a-footer__text">
-                    powered by the chucknorris.io
+                    by <a
+                        href="https://www.linkedin.com/in/pmoreiralk/"
+                        target="_blank"
+                        rel="noopener nofollow"
+                    >pmoreira</a>
+                </p>
+
+                <p class="a-text a-footer__text">
+                    powered by the <a
+                        href="https://api.chucknorris.io"
+                        target="_blank"
+                        rel="noopener nofollow"
+                    >chucknorris.io</a>
                 </p>
 
             </o-wrapper>
