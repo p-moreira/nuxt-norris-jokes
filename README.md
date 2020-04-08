@@ -50,4 +50,27 @@ If you will host the code on Gitlab, the project includes all we need to setup t
 - /disabled.gitlab-ci.yml (change to .gitlab-ci.yml to trigger the automatic deploy)
 - /nginx (if you want to deploy using nginx proxy server)
 
+## How to setup the app social sharing and SEO metadata
+
+Open the `/commom/config.js` file and change the object values
+
+```
+siteUrl: 'https://norrisjokes.firenzze.com',
+siteName: 'Nuxt Norris Jokes',
+siteTitle: 'Nuxt Norris Jokes | Natal, RN, Brasil',
+siteDescription: 'Search for Chuck Norris jokes from the chucknorris.io API',
+siteSocialImage: '/social-share-image.png',
+twitterUser: '@pmoreirabr'
+```
+
+## How to change or to add the funny loading messages
+
+When wainting for the search results, the app shows a message in a dramatic black screen.
+
+You can change the messages or you can add as many messages you want.
+
+Open the `/common/loading-messages.js` file and change the messages.
+
+----------
+
 Have some question? Contact me at https://t.me/pmoreira
