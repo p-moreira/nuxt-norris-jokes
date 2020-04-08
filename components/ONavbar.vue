@@ -9,19 +9,33 @@
             class="o-navbar__wrapper"
         >
 
-            <n-link to="/">
+            <section class="o-navbar__header">
 
-                <figure>
+                <n-link to="/">
+
                     <img
-                        class="a-navbar__image"
-                        srcset="@/assets/image-chuck-norris-navbar-xs.png,
-                                @/assets/image-chuck-norris-navbar-xs-2x.png, 2x"
-                        src="@/assets/image-chuck-norris-navbar-xs-2x.png"
-                        alt="Chuck Norris"
+                        v-show="$route.path != '/'"
+                        src="@/assets/icon-arrow-back.svg"
+                        alt="Back to the home"
                     >
-                </figure>
 
-            </n-link>
+                </n-link>
+
+                <n-link to="/">
+
+                    <figure>
+                        <img
+                            class="a-navbar__image"
+                            srcset="@/assets/image-chuck-norris-navbar-xs.png,
+                                    @/assets/image-chuck-norris-navbar-xs-2x.png, 2x"
+                            src="@/assets/image-chuck-norris-navbar-xs-2x.png"
+                            alt="Chuck Norris"
+                        >
+                    </figure>
+
+                </n-link>
+
+            </section>
 
             <h1 class="a-title a-title--level-1 a-navbar__title">
                 The truth about Chuck Norris
@@ -58,6 +72,14 @@ export default {
 /* o-navbar__wrapper component */
 .o-navbar__wrapper {
     padding: calc(var(--space-grid) * 3);
+}
+
+.o-navbar__header {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 24px auto 24px;
+    justify-items: center;
+    align-items: start;
 }
 
 /* m-navbar__search component */
