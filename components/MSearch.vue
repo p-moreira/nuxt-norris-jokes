@@ -6,6 +6,7 @@
 
             <a-input
                 id="search-input"
+                ref="searchInput"
                 v-model="searchText.value"
                 type="text"
                 name="search-input"

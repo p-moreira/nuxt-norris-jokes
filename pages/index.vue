@@ -53,6 +53,7 @@
                         class="o-header-body__wrapper"
                     >
 
+                        <!-- Search input box -->
                         <m-search
                             ref="mSearch"
                             show-i-am-lucky
@@ -88,7 +89,7 @@ export default {
     },
 
     mounted () {
-        setTimeout(() => { this.$refs.mSearch.$refs.input.focus() }, 500)
+        setTimeout(() => { this.$refs.mSearch.$refs.searchInput.$refs.input.focus() }, 500)
     }
 
 }
