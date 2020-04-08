@@ -23,13 +23,14 @@
                 >
 
                     <!-- Category button -->
-                    <button
+                    <a-button
                         v-for="category in joke.categories"
                         :key="category"
-                        class="a-button a-button--chip a-quote-footer__chip"
+                        chip
+                        class="a-quote-footer__chip"
                     >
                         {{ category }}
-                    </button>
+                    </a-button>
 
                 </section>
 
@@ -79,11 +80,16 @@
 </template>
 
 <script>
+import AButton from '@/components/AButton'
 import { formatDate } from '@/common/utils.js'
 
 export default {
 
     name: 'MQuote',
+
+    components: {
+        AButton
+    },
 
     props: {
 

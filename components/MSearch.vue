@@ -15,34 +15,41 @@
                 @keyup.enter="search"
             >
 
-            <button
-                class="a-button a-search__button"
+            <a-button
+                class="a-search__button"
                 @click="search"
             >
                 <img
                     src="@/assets/icon-search.svg"
                     alt="Search icon"
                 >
-            </button>
+            </a-button>
 
         </div>
 
-        <button
+        <a-button
             v-show="showIAmLucky"
-            class="a-button a-button--text a-lucky__button"
+            text
+            class="a-lucky__button"
             @click="luckySearch"
         >
             I'm feeling lucky
-        </button>
+        </a-button>
 
     </div>
 
 </template>
 
 <script>
+import AButton from '@/components/AButton'
+
 export default {
 
     name: 'MSearch',
+
+    components: {
+        AButton
+    },
 
     props: {
         showIAmLucky: Boolean
@@ -110,6 +117,18 @@ export default {
 .m-search__wrapper {
     display: grid;
     grid-template-columns: 1fr auto;
+}
+
+/* a-search__button component */
+.a-search__button {
+    height: 3.5rem;
+    width: 3.5rem;
+    border: 1px solid var(--color-primary);
+    border-radius: 0 0.3125rem 0.3125rem 0;
+}
+
+.a-search__button:hover {
+    border-color: var(--color-secondary);
 }
 
 /* a-lucky__button component */

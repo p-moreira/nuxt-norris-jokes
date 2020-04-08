@@ -18,21 +18,23 @@
 
                     <o-wrapper class="o-search-content-header__wrapper">
 
-                        <button
+                        <a-button
                             v-show="currentView.type === 'grid'"
-                            class="a-button a-button--outlined a-button-change-view"
+                            outlined
+                            class="a-button-change-view"
                             @click="showList"
                         >
                             Show like List
-                        </button>
+                        </a-button>
 
-                        <button
+                        <a-button
                             v-show="currentView.type === 'list'"
-                            class="a-button a-button--outlined a-button-change-view"
+                            outlined
+                            class="a-button-change-view"
                             @click="showGrid"
                         >
                             Show like Grid
-                        </button>
+                        </a-button>
 
                     </o-wrapper>
 
@@ -48,18 +50,15 @@
 
                 </o-wrapper>
 
-                <button
+                <a-button
                     v-show="!$route.query.l"
-                    :class="{
-                        'a-button': 1,
-                        'a-button--large': 1,
-                        'a-button--disabled': isLastPage,
-                        'a-search-footer__button': 1
-                    }"
+                    large
+                    :disabled="isLastPage"
+                    class="a-search-footer__button"
                     @click="nextPage"
                 >
                     {{ isLastPage ? 'No more jokes' : 'Load more' }}
-                </button>
+                </a-button>
 
             </o-wrapper>
 
@@ -94,6 +93,7 @@
 import OSection from '@/components/OSection'
 import OWrapper from '@/components/OWrapper'
 import MQuote from '@/components/MQuote'
+import AButton from '@/components/AButton'
 
 export default {
 
@@ -104,7 +104,8 @@ export default {
     components: {
         OSection,
         OWrapper,
-        MQuote
+        MQuote,
+        AButton
     },
 
     async asyncData ({ $http, query, redirect, error }) {
@@ -296,6 +297,16 @@ export default {
     text-align: center;
     padding: var(--padding-section);
     border-radius: 0.3125rem;
+}
+
+/* a-button-change-view component */
+.a-button-change-view {
+    display: none;
+}
+@media screen and (min-width: 600px) {
+    .a-button-change-view {
+        display: inline-block;
+    }
 }
 
 /* a-search-footer__button component */
