@@ -193,7 +193,6 @@ export default {
 /* a-quote__text component */
 .a-quote__text {
     color: var(--color-on-primary-medium);
-    font-weight: 500;
 }
 
 .a-quote__text::before {

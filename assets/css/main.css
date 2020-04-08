@@ -20,26 +20,6 @@
     /* Legacy iOS */
 }
 
-/* roboto-regular - latin */
-@font-face {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    src: url('./fonts/roboto-v20-latin-regular.eot');
-    /* IE9 Compat Modes */
-    src: local('Roboto'), local('Roboto-Regular'),
-        url('./fonts/roboto-v20-latin-regular.eot?#iefix') format('embedded-opentype'),
-        /* IE6-IE8 */
-        url('./fonts/roboto-v20-latin-regular.woff2') format('woff2'),
-        /* Super Modern Browsers */
-        url('./fonts/roboto-v20-latin-regular.woff') format('woff'),
-        /* Modern Browsers */
-        url('./fonts/roboto-v20-latin-regular.ttf') format('truetype'),
-        /* Safari, Android, iOS */
-        url('./fonts/roboto-v20-latin-regular.svg#Roboto') format('svg');
-    /* Legacy iOS */
-}
-
 /* roboto-500 - latin */
 @font-face {
     font-family: 'Roboto';
@@ -57,26 +37,6 @@
         url('./fonts/roboto-v20-latin-500.ttf') format('truetype'),
         /* Safari, Android, iOS */
         url('./fonts/roboto-v20-latin-500.svg#Roboto') format('svg');
-    /* Legacy iOS */
-}
-
-/* roboto-900 - latin */
-@font-face {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 900;
-    src: url('./fonts/roboto-v20-latin-900.eot');
-    /* IE9 Compat Modes */
-    src: local('Roboto Black'), local('Roboto-Black'),
-        url('./fonts/roboto-v20-latin-900.eot?#iefix') format('embedded-opentype'),
-        /* IE6-IE8 */
-        url('./fonts/roboto-v20-latin-900.woff2') format('woff2'),
-        /* Super Modern Browsers */
-        url('./fonts/roboto-v20-latin-900.woff') format('woff'),
-        /* Modern Browsers */
-        url('./fonts/roboto-v20-latin-900.ttf') format('truetype'),
-        /* Safari, Android, iOS */
-        url('./fonts/roboto-v20-latin-900.svg#Roboto') format('svg');
     /* Legacy iOS */
 }
 
@@ -141,7 +101,7 @@
 
     /* typography */
     --font-family: 'Roboto', sans-serif;
-    --font-weight: 400;
+    --font-weight: 500;
     /* regular */
     --font-size: 1rem;
     /* 16px */
@@ -204,8 +164,6 @@
         /* 32px */
         --title-level-4: 1.125rem;
         /* 28px */
-        --button: 1.125rem;
-        /* 18px */
         --padding-section: 3.75rem;
         /* 60px */
         --space: calc(var(--space-grid) * 3);
@@ -389,7 +347,6 @@ a:hover {
 }
 
 .a-button--chip {
-    font-weight: 500;
     font-size: 0.8125rem;
     padding: 4px var(--space-grid);
     border: 1px solid var(--color-on-surface-low);
@@ -415,6 +372,19 @@ a:hover {
     color: var(--color-secondary);
 }
 
+/* a-button--outlined */
+.a-button--outlined {
+    border: 1px solid var(--color-primary);
+    background-color: transparent;
+    color: var(--color-primary);
+}
+
+.a-button--outlined:hover {
+    border: 1px solid var(--color-secondary);
+    background-color: transparent;
+    color: var(--color-secondary);
+}
+
 /* a-search__button component */
 .a-search__button {
     height: 3.5rem;
@@ -425,6 +395,16 @@ a:hover {
 
 .a-search__button:hover {
     border-color: var(--color-secondary);
+}
+
+
+.a-button-change-view {
+    display: none;
+}
+@media screen and (min-width: 600px) {
+    .a-button-change-view {
+        display: inline-block;
+    }
 }
 
 /* a-text component */

@@ -6,14 +6,37 @@
         <o-section
             v-if="!errorMessage"
             class="o-search__content"
+            :style="getStyle"
         >
 
             <o-wrapper
-                padding-section
                 boxed
-                row-gap-small
                 class="o-search-content__wrapper"
             >
+
+                <o-section class="o-search-content__header">
+
+                    <o-wrapper class="o-search-content-header__wrapper">
+
+                        <button
+                            v-show="currentView.type === 'grid'"
+                            class="a-button a-button--outlined a-button-change-view"
+                            @click="showList"
+                        >
+                            Show like List
+                        </button>
+
+                        <button
+                            v-show="currentView.type === 'list'"
+                            class="a-button a-button--outlined a-button-change-view"
+                            @click="showGrid"
+                        >
+                            Show like Grid
+                        </button>
+
+                    </o-wrapper>
+
+                </o-section>
 
                 <o-wrapper class="o-search-content__body">
 
@@ -109,7 +132,6 @@ export default {
                 // }
 
                 // If it is an 'I am lucky' search, return the first result
-                console.log(query.l)
                 if (query.l && jokesData.total) {
                     return {
                         jokes: [jokesData.result[0]],
@@ -159,7 +181,14 @@ export default {
 
             currentPage: 1,
 
-            errorMessage: ''
+            errorMessage: '',
+
+            // Set the results list view to grid or list
+            currentView: {
+                type: 'list',
+                '--content-body-max-width': '31.25rem'
+            }
+
         }
     },
 
@@ -171,6 +200,10 @@ export default {
 
         isLastPage () {
             return this.currentPage >= this.totalJokes / 10
+        },
+
+        getStyle () {
+            return this.currentView
         }
 
     },
@@ -179,6 +212,30 @@ export default {
 
         nextPage () {
             return this.currentPage++
+        },
+
+        showList () {
+            this.currentView = {
+                type: 'list',
+                '--content-body-max-width': '31.25rem',
+                '--content-body-display-sm': 'grid',
+                '--content-body-column-count-sm': 'none',
+                '--content-body-column-gap-sm': 'none',
+                '--content-body-column-count-md': 'none',
+                '--content-body-column-count-lg': 'none'
+            }
+        },
+
+        showGrid () {
+            this.currentView = {
+                type: 'grid',
+                '--content-body-max-width': 'none',
+                '--content-body-display-sm': 'block',
+                '--content-body-column-count-sm': '2',
+                '--content-body-column-gap-sm': 'calc(var(--space-grid) * 2)',
+                '--content-body-column-count-md': '3',
+                '--content-body-column-count-lg': '4'
+            }
         }
 
     },
@@ -189,22 +246,42 @@ export default {
 </script>
 
 <style scoped>
+.o-search-content__wrapper {
+    justify-items: center;
+    padding: 0 var(--padding-section) var(--padding-section);
+}
+
+.o-search-content-header__wrapper {
+    /*  */
+    padding: var(--space);
+    justify-items: center;
+}
+
 /* o-search-content__body component */
+.o-search-content__body {
+    max-width: var(--content-body-max-width);
+}
+
 @media screen and (min-width: 600px) {
     .o-search-content__body {
-        display: block;
-        column-count: 2;
-        column-gap: calc(var(--space-grid) * 2);
+        display: var(--content-body-display-sm);
+        /* grid or block */
+        column-count: var(--content-body-column-count-sm);
+        /** none or 2 */
+        column-gap: var(--content-body-column-gap-sm);
+        /** none or calc(var(--space-grid) * 2) */
     }
 }
 @media screen and (min-width: 900px) {
     .o-search-content__body {
-        column-count: 3;
+        column-count: var(--content-body-column-count-md);
+        /* none or 3 */
     }
 }
 @media screen and (min-width: 1200px) {
     .o-search-content__body {
-        column-count: 4;
+        column-count: var(--content-body-column-count-lg);
+        /* none or 4 */
     }
 }
 
