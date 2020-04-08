@@ -13,21 +13,27 @@
 
             <o-wrapper centered-content>
 
-                <p class="a-text a-footer__text">
+                <a-text
+                    caption
+                    color="var(--color-on-primary-medium)"
+                >
                     by <a
                         href="https://www.linkedin.com/in/pmoreiralk/"
                         target="_blank"
                         rel="noopener nofollow"
                     >pmoreira</a>
-                </p>
+                </a-text>
 
-                <p class="a-text a-footer__text">
+                <a-text
+                    caption
+                    color="var(--color-on-primary-medium)"
+                >
                     powered by the <a
                         href="https://api.chucknorris.io"
                         target="_blank"
                         rel="noopener nofollow"
                     >chucknorris.io</a>
-                </p>
+                </a-text>
 
             </o-wrapper>
 
@@ -40,6 +46,7 @@
 <script>
 import OSection from '@/components/OSection'
 import OWrapper from '@/components/OWrapper'
+import AText from '@/components/AText'
 
 export default {
 
@@ -47,7 +54,8 @@ export default {
 
     components: {
         OSection,
-        OWrapper
+        OWrapper,
+        AText
     },
 
     props: {

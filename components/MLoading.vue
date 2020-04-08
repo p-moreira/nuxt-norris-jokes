@@ -15,9 +15,9 @@
                 {{ loadingMessage }}
             </a-title>
 
-            <p class="a-text a-loading__text">
+            <a-text color="var(--color-on-primary-medium)">
                 waiting for the answers...
-            </p>
+            </a-text>
 
         </div>
 
@@ -27,13 +27,15 @@
 
 <script>
 import ATitle from '@/components/ATitle'
+import AText from '@/components/AText'
 
 export default {
 
     name: 'MLoading',
 
     components: {
-        ATitle
+        ATitle,
+        AText
     },
 
     data () {
@@ -87,10 +89,5 @@ export default {
     row-gap: var(--space);
     padding: var(--padding-section);
     border: 2px solid var(--color-on-primary);
-}
-
-/* a-loading__text component */
-.a-loading__text {
-    color: var(--color-on-primary-medium);
 }
 </style>

@@ -1,5 +1,5 @@
 /* ********** */
-/* global properties */
+/* Global properties */
 /* ********** */
 
 /* Extra small screens */
@@ -19,10 +19,10 @@ body {
     font-family: var(--font-family);
     font-size: var(--font-size);
     font-weight: var(--font-weight);
-    color: var(--color-on-bg);
+    color: var(--color-on-surface);
 }
 
-/* global resets */
+/* Global resets */
 
 * {
     transition: all 0.3s;
@@ -52,35 +52,4 @@ a:hover {
 }
 .page-enter, .page-leave-active {
     opacity: 0;
-}
-
-
-/* ********** */
-/* Components */
-/* ********** */
-
-/* ********** */
-/* Atoms components */
-/* ********** */
-
-/* a-text component */
-.a-text {
-    font-size: var(--text);
-    line-height: 1.4;
-    color: var(--color-on-surface-medium);
-    word-break: break-word;
-}
-
-.a-text--large {
-    font-size: var(--text-large);
-}
-
-.a-text--caption {
-    font-size: var(--caption);
-}
-
-/* a-footer__text component */
-.a-footer__text {
-    font-size: var(--caption);
-    color: var(--color-on-primary-medium);
 }

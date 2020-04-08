@@ -14,6 +14,7 @@
                 class="o-search-content__wrapper"
             >
 
+                <!-- View control section -->
                 <o-section class="o-search-content__header">
 
                     <o-wrapper class="o-search-content-header__wrapper">
@@ -40,6 +41,7 @@
 
                 </o-section>
 
+                <!-- Search results section -->
                 <o-wrapper class="o-search-content__body">
 
                     <m-quote
@@ -50,6 +52,7 @@
 
                 </o-wrapper>
 
+                <!-- Load more button -->
                 <a-button
                     v-show="!$route.query.l"
                     large
@@ -64,6 +67,7 @@
 
         </o-section>
 
+        <!-- Error message section -->
         <o-section
             v-else
             class="o-section-error"
@@ -76,9 +80,12 @@
             >
 
                 <div class="m-error-box">
-                    <p class="a-text a-text--large">
+                    <a-text
+                        large
+                        center
+                    >
                         {{ errorMessage }}
-                    </p>
+                    </a-text>
                 </div>
 
             </o-wrapper>
@@ -94,6 +101,7 @@ import OSection from '@/components/OSection'
 import OWrapper from '@/components/OWrapper'
 import MQuote from '@/components/MQuote'
 import AButton from '@/components/AButton'
+import AText from '@/components/AText'
 
 export default {
 
@@ -105,7 +113,8 @@ export default {
         OSection,
         OWrapper,
         MQuote,
-        AButton
+        AButton,
+        AText
     },
 
     async asyncData ({ $http, query, redirect, error }) {
@@ -294,7 +303,6 @@ export default {
 .m-error-box {
     width: 100%;
     background-color: rgba(0, 0, 0, 0.05);
-    text-align: center;
     padding: var(--padding-section);
     border-radius: 0.3125rem;
 }

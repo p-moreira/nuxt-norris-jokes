@@ -7,9 +7,12 @@
             <!-- Quote body -->
             <section class="m-quote__body">
 
-                <p class="a-text a-quote__text">
+                <a-text
+                    color="var(--color-on-primary-medium)"
+                    class="a-quote__text"
+                >
                     {{ joke.value }}
-                </p>
+                </a-text>
 
             </section>
 
@@ -50,22 +53,34 @@
                         class="m-quote-footer-info__data"
                     >
 
-                        <p class="a-text a-text--caption a-quote-footer-info__text">
-                            {{ `Created: ${createdAt}` }}
-                        </p>
-
-                        <p class="a-text a-text--caption a-quote-footer-info__text">
-                            {{ `Updated: ${updatedAt}` }}
-                        </p>
-
-                        <a
-                            :href="joke.url"
-                            rel="norefer nofollow"
-                            target="_blank"
-                            class="a-text--caption"
+                        <a-text
+                            caption
+                            color="var(--color-on-primary-low)"
                         >
-                            Link
-                        </a>
+                            {{ `Created: ${createdAt}` }}
+                        </a-text>
+
+                        <a-text
+                            caption
+                            color="var(--color-on-primary-low)"
+                        >
+                            {{ `Updated: ${updatedAt}` }}
+                        </a-text>
+
+                        <a-text
+                            caption
+                            color="var(--color-on-primary-low)"
+                        >
+
+                            <a
+                                :href="joke.url"
+                                rel="norefer nofollow"
+                                target="_blank"
+                            >
+                                Link
+                            </a>
+
+                        </a-text>
 
                     </section>
 
@@ -80,6 +95,7 @@
 </template>
 
 <script>
+import AText from '@/components/AText'
 import AButton from '@/components/AButton'
 import { formatDate } from '@/common/utils.js'
 
@@ -88,6 +104,7 @@ export default {
     name: 'MQuote',
 
     components: {
+        AText,
         AButton
     },
 
@@ -126,21 +143,6 @@ export default {
             return this.joke.updated_at ? formatDate(this.joke.updated_at) : ''
         }
     }
-
-    // methods: {
-
-    //     async searchByCategory (category) {
-    //         // api.searchByCategory(category)
-
-    //         const url =
-
-    //         try {
-    //         const response = await this.$http.get(url)
-
-    //         if (response.ok) {
-    //             const jokesData = await response.json()
-    //     }
-    // }
 
 }
 </script>
@@ -197,10 +199,6 @@ export default {
 }
 
 /* a-quote__text component */
-.a-quote__text {
-    color: var(--color-on-primary-medium);
-}
-
 .a-quote__text::before {
     content: url("~assets/image-quotation-mark.svg");
     display: block;
@@ -217,9 +215,5 @@ export default {
 .a-quote-footer__chip:hover {
     border: 1px solid var(--color-secondary);
     color: var(--color-on-secondary);
-}
-
-.a-quote-footer-info__text {
-    color: var(--color-on-primary-low);
 }
 </style>
