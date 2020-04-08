@@ -49,11 +49,11 @@
                         class="m-quote-footer-info__data"
                     >
 
-                        <p class="a-text a-text--caption">
+                        <p class="a-text a-text--caption a-quote-footer-info__text">
                             {{ `Created: ${createdAt}` }}
                         </p>
 
-                        <p class="a-text a-text--caption">
+                        <p class="a-text a-text--caption a-quote-footer-info__text">
                             {{ `Updated: ${updatedAt}` }}
                         </p>
 
@@ -61,7 +61,7 @@
                             :href="joke.url"
                             rel="norefer nofollow"
                             target="_blank"
-                            class="a-text a-text--caption"
+                            class="a-text--caption"
                         >
                             Link
                         </a>
@@ -143,11 +143,11 @@ export default {
 /* m-quote component */
 .m-quote {
     padding: calc(var(--space-grid) * 2);
-    border: 2px solid var(--color-primary);
     border-radius: 0.625rem;
     display: inline-block;
     margin: 0 0 calc(var(--space-grid) * 2);
     width: 100%;
+    background-color: var(--color-primary);
 }
 
 /* m-quote__wrapper component */
@@ -166,7 +166,7 @@ export default {
     padding: calc(var(--space-grid) * 2) 0;
     border-top: 1px solid
         rgba(
-            var(--settings-color-on-surface),
+            var(--settings-color-on-primary),
             calc(var(--color-contrast-low) / 2)
         );
 }
@@ -177,7 +177,7 @@ export default {
     row-gap: calc(var(--space-grid) * 2);
     border-top: 1px solid
         rgba(
-            var(--settings-color-on-surface),
+            var(--settings-color-on-primary),
             calc(var(--color-contrast-low) / 2)
         );
     padding: calc(var(--space-grid) * 2) 0 0;
@@ -187,9 +187,15 @@ export default {
 .m-quote-footer-info__data {
     display: grid;
     row-gap: calc(var(--space-grid) / 2);
+    color: var(--color-on-primary-low);
 }
 
 /* a-quote__text component */
+.a-quote__text {
+    color: var(--color-on-primary-medium);
+    font-weight: 500;
+}
+
 .a-quote__text::before {
     content: url("~assets/image-quotation-mark.svg");
     display: block;
@@ -199,5 +205,16 @@ export default {
 /* a-quote-footer__chip component */
 .a-quote-footer__chip {
     width: fit-content;
+    border: 1px solid var(--color-on-primary-low);
+    color: var(--color-on-primary-medium);
+}
+
+.a-quote-footer__chip:hover {
+    border: 1px solid var(--color-secondary);
+    color: var(--color-on-secondary);
+}
+
+.a-quote-footer-info__text {
+    color: var(--color-on-primary-low);
 }
 </style>
