@@ -1,3 +1,4 @@
+import Config from '@/common/config.js'
 
 export default {
     mode: 'universal',
@@ -5,11 +6,69 @@ export default {
     ** Headers of the page
     */
     head: {
-        title: process.env.npm_package_name || '',
+        title: Config.app.siteTitle,
         meta: [
             { charset: 'utf-8' },
             { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-            { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
+            { hid: 'description', name: 'description', content: Config.app.siteDescription },
+            // OpenGraph
+            {
+                hid: 'og:title',
+                property: 'og:title',
+                content: Config.app.siteTitle
+            },
+            {
+                hid: 'og:site_name',
+                property: 'og:site_name',
+                content: Config.app.siteName
+            },
+            {
+                hid: 'og:type',
+                property: 'og:type',
+                content: 'website'
+            },
+            {
+                hid: 'og:url',
+                property: 'og:url',
+                content: Config.app.siteUrl
+            },
+            {
+                hid: 'og:image',
+                property: 'og:image',
+                content: `${Config.app.siteUrl}/${Config.app.siteSocialImage}`
+            },
+            {
+                hid: 'og:description',
+                property: 'og:description',
+                content: Config.app.siteDescription
+            },
+
+            // Twitter card
+            {
+                hid: 'twitter:card',
+                name: 'twitter:card',
+                content: 'summary_large_image'
+            },
+            {
+                hid: 'twitter:site',
+                name: 'twitter:site',
+                content: Config.app.twitterUser
+            },
+            {
+                hid: 'twitter:title',
+                name: 'twitter:title',
+                content: Config.app.siteTitle
+            },
+            {
+                hid: 'twitter:description',
+                name: 'twitter:description',
+                content: Config.app.siteDescription
+            },
+            {
+                hid: 'twitter:image:src',
+                name: 'twitter:image:src',
+                content: `${Config.app.siteUrl}/${Config.app.siteSocialImage}`
+            }
         ],
         link: [
             { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -44,6 +103,12 @@ export default {
         '@nuxtjs/pwa',
         '@nuxt/http'
     ],
+    pwa: {
+        manifest: {
+            name: 'Nuxt Norris',
+            short_name: 'Norris'
+        }
+    },
     /*
     ** http module setup: https://http.nuxtjs.org/
     */
@@ -67,11 +132,6 @@ export default {
         */
         extend (config, ctx) {
         }
-    },
-
-    // nuxt generate setup
-    generate: {
-        // See: https://nuxtjs.org/faq/netlify-deployment/
-        fallback: true
     }
+
 }
