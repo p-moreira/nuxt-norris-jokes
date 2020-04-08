@@ -1,0 +1,81 @@
+:root {
+
+    /*
+        Base colors
+        - Change the base colors values to your brand colors
+    */
+
+    --color-secondary: rgba(241, 90, 36, 1);
+    --color-secondary-dark: rgba(169, 63, 25, 1);
+    --color-secondary-light: rgba(247, 156, 124, 1);
+
+    --color-primary: rgba(0, 0, 0, 1);
+    --color-primary-light: rgba(102, 102, 102, 1);
+    --color-primary-dark: rgba(0, 0, 0, 1);
+
+    --color-bg: #ffffff;
+    --color-surface: #ffffff;
+    --color-error: rgba(242, 71, 71, 1);
+    --color-success: rgba(0, 219, 193, 1);
+
+    /*
+        Color contrasts
+        - Color emphasys transparency levels
+    */
+    --color-contrast-hi: 0.87;
+    --color-contrast-medium: 0.60;
+    --color-contrast-low: 0.37;
+
+    /*
+        Text colors settings
+        - The text colors has three transparency leves: hi, medium and low
+        - You need to change only the --settings RGB values bellow
+    */
+    --settings-color-on-bg: 0, 0, 0;
+    --settings-color-on-surface: 0, 0, 0;
+    --settings-color-on-primary: 255, 255, 255;
+    --settings-color-on-secondary: 255, 255, 255;
+    --settings-color-on-error: 255, 255, 255;
+    --settings-color-on-success: 255, 255, 255;
+
+    /*
+        Text colors
+        - Does not change the values bellow,
+        they are based on the --seetings values
+    */
+    --color-on-bg: rgba(var(--settings-color-on-bg), var(--color-contrast-hi));
+    --color-on-bg-medium: rgba(var(--settings-color-on-bg), var(--color-contrast-medium));
+    --color-on-bg-low: rgba(var(--settings-color-on-bg), var(--color-contrast-low));
+
+    --color-on-surface: rgba(var(--settings-color-on-surface), var(--color-contrast-hi));
+    --color-on-surface-medium: rgba(var(--settings-color-on-surface), var(--color-contrast-medium));
+    --color-on-surface-low: rgba(var(--settings-color-on-surface), var(--color-contrast-low));
+
+    --color-on-primary: rgba(var(--settings-color-on-primary), var(--color-contrast-hi));
+    --color-on-primary-medium: rgba(var(--settings-color-on-primary), var(--color-contrast-medium));
+    --color-on-primary-low: rgba(var(--settings-color-on-primary), var(--color-contrast-low));
+
+    --color-on-secondary: rgba(var(--settings-color-on-secondary), var(--color-contrast-hi));
+    --color-on-secondary-medium: rgba(var(--settings-color-on-secondary), var(--color-contrast-medium));
+    --color-on-secondary-low: rgba(var(--settings-color-on-secondary), var(--color-contrast-low));
+
+    --color-on-error: rgba(var(--settings-color-on-error), var(--color-contrast-hi));
+    --color-on-error-medium: rgba(var(--settings-color-on-error), var(--color-contrast-medium));
+    --color-on-error-low: rgba(var(--settings-color-on-error), var(--color-contrast-low));
+
+    --color-on-success: rgba(var(--settings-color-on-success), var(--color-contrast-hi));
+    --color-on-success-medium: rgba(var(--settings-color-on-success), var(--color-contrast-medium));
+    --color-on-success-low: rgba(var(--settings-color-on-success), var(--color-contrast-low));
+
+    /*
+        Background color
+        - Does not change the value bellow,
+        it is basedd on the --color-bg value
+        - If you can change the background color,
+        change the --color-bg value in the
+        base colors section above
+
+    */
+    background-color: var(--color-bg);
+
+}

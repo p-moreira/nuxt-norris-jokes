@@ -1,203 +1,20 @@
-/* https://google-webfonts-helper.herokuapp.com/fonts/ */
-
-/* bangers-regular - latin */
-@font-face {
-    font-family: 'Bangers';
-    font-style: normal;
-    font-weight: 400;
-    src: url('./fonts/bangers-v12-latin-regular.eot');
-    /* IE9 Compat Modes */
-    src: local('Bangers Regular'), local('Bangers-Regular'),
-        url('./fonts/bangers-v12-latin-regular.eot?#iefix') format('embedded-opentype'),
-        /* IE6-IE8 */
-        url('./fonts/bangers-v12-latin-regular.woff2') format('woff2'),
-        /* Super Modern Browsers */
-        url('./fonts/bangers-v12-latin-regular.woff') format('woff'),
-        /* Modern Browsers */
-        url('./fonts/bangers-v12-latin-regular.ttf') format('truetype'),
-        /* Safari, Android, iOS */
-        url('./fonts/bangers-v12-latin-regular.svg#Bangers') format('svg');
-    /* Legacy iOS */
-}
-
-/* roboto-500 - latin */
-@font-face {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    src: url('./fonts/roboto-v20-latin-500.eot');
-    /* IE9 Compat Modes */
-    src: local('Roboto Medium'), local('Roboto-Medium'),
-        url('./fonts/roboto-v20-latin-500.eot?#iefix') format('embedded-opentype'),
-        /* IE6-IE8 */
-        url('./fonts/roboto-v20-latin-500.woff2') format('woff2'),
-        /* Super Modern Browsers */
-        url('./fonts/roboto-v20-latin-500.woff') format('woff'),
-        /* Modern Browsers */
-        url('./fonts/roboto-v20-latin-500.ttf') format('truetype'),
-        /* Safari, Android, iOS */
-        url('./fonts/roboto-v20-latin-500.svg#Roboto') format('svg');
-    /* Legacy iOS */
-}
-
 /* ********** */
 /* global properties */
 /* ********** */
 
-/* extra small screens */
+/* Extra small screens */
 :root {
-
-    /* base colors */
-
-    --color-secondary: rgba(241, 90, 36, 1);
-    --color-secondary-dark: rgba(169, 63, 25, 1);
-    --color-secondary-light: rgba(247, 156, 124, 1);
-
-    --color-primary: rgba(0, 0, 0, 1);
-    --color-primary-light: rgba(102, 102, 102, 1);
-    --color-primary-dark: rgba(0, 0, 0, 1);
-
-    --color-bg: #ffffff;
-    --color-surface: #ffffff;
-    --color-error: rgba(242, 71, 71, 1);
-    --color-success: rgba(0, 219, 193, 1);
-
-    --color-contrast-hi: 0.87;
-    --color-contrast-medium: 0.60;
-    --color-contrast-low: 0.37;
-
-    --settings-color-on-bg: 0, 0, 0;
-    --color-on-bg: rgba(var(--settings-color-on-bg), var(--color-contrast-hi));
-    --color-on-bg-medium: rgba(var(--settings-color-on-bg), var(--color-contrast-medium));
-    --color-on-bg-low: rgba(var(--settings-color-on-bg), var(--color-contrast-low));
-
-    --settings-color-on-surface: 0, 0, 0;
-    --color-on-surface: rgba(var(--settings-color-on-surface), var(--color-contrast-hi));
-    --color-on-surface-medium: rgba(var(--settings-color-on-surface), var(--color-contrast-medium));
-    --color-on-surface-low: rgba(var(--settings-color-on-surface), var(--color-contrast-low));
-
-    --settings-color-on-primary: 255, 255, 255;
-    --color-on-primary: rgba(var(--settings-color-on-primary), var(--color-contrast-hi));
-    --color-on-primary-medium: rgba(var(--settings-color-on-primary), var(--color-contrast-medium));
-    --color-on-primary-low: rgba(var(--settings-color-on-primary), var(--color-contrast-low));
-
-    --settings-color-on-secondary: 255, 255, 255;
-    --color-on-secondary: rgba(var(--settings-color-on-secondary), var(--color-contrast-hi));
-    --color-on-secondary-medium: rgba(var(--settings-color-on-secondary), var(--color-contrast-medium));
-    --color-on-secondary-low: rgba(var(--settings-color-on-secondary), var(--color-contrast-low));
-
-    --settings-color-on-error: 255, 255, 255;
-    --color-on-error: rgba(var(--settings-color-on-error), var(--color-contrast-hi));
-    --color-on-error-medium: rgba(var(--settings-color-on-error), var(--color-contrast-medium));
-    --color-on-error-low: rgba(var(--settings-color-on-error), var(--color-contrast-low));
-
-    --settings-color-on-success: 255, 255, 255;
-    --color-on-success: rgba(var(--settings-color-on-success), var(--color-contrast-hi));
-    --color-on-success-medium: rgba(var(--settings-color-on-success), var(--color-contrast-medium));
-    --color-on-success-low: rgba(var(--settings-color-on-success), var(--color-contrast-low));
-
-    /* root size */
-    font-size: 16px;
-
-    /* typography */
-    --font-family: 'Roboto', sans-serif;
-    --font-weight: 500;
-    /* regular */
-    --font-size: 1rem;
-    /* 16px */
-
-    --font-family-title: 'Bangers', cursive;
-    --font-weight-title: 400;
-    --line-height-title: 1;
-
-    --title-level-1: 2.25rem;
-    /* 36px */
-    --title-level-2: 2rem;
-    /* 32px */
-    --title-level-3: 1.75rem;
-    /* 28px */
-    --title-level-4: 1.5rem;
-    /* 24px */
-
-    --subtitle: 1.5rem;
-    /* 24px */
-
-    --text: 1.125rem;
-    /* 18px */
-    --text-large: 1.25rem;
-    /* 20px */
-    --caption: 0.9375rem;
-    /* 15px */
-    --button: 0.875rem;
-    /* 14px */
-
-    /* spaces */
-    --space-grid: 0.5rem;
-    /* 8px */
-    --space: calc(var(--space-grid) * 2);
-    /* 16px */
-    --padding-section: calc(var(--space-grid) * 3);
-    /* 24px */
-    --boxed-width: 75rem;
-
-    word-spacing: 1px;
-    -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
 
     /* scroll */
     scroll-behavior: smooth;
 
-    /* background color */
-    background-color: var(--color-bg);
 }
 
-/* small screens */
-@media screen and (min-width: 600px) {
-    :root {
-        --title-level-1: 2.875rem;
-        /* 46px */
-        --title-level-2: 1.75rem;
-        /* 36px */
-        --title-level-3: 1.5rem;
-        /* 32px */
-        --title-level-4: 1.125rem;
-        /* 28px */
-        --padding-section: 3.75rem;
-        /* 60px */
-        --space: calc(var(--space-grid) * 3);
-        /* 24px */
-    }
-}
-
-/* medium screens */
-@media screen and (min-width: 900px) {
-    :root {
-        --space: calc(var(--space-grid) * 4);
-        /* 32px */
-    }
-}
-
-/* large screens */
-@media screen and (min-width: 1200px) {
-    :root {
-        --title-level-1: 3.5rem;
-        /* 56px */
-        --title-level-2: 2.25rem;
-        /* 36px */
-        --title-level-3: 2rem;
-        /* 32px */
-        --title-level-4: 1.375rem;
-        /* 22px */
-        --text: 1.25rem;
-        --text-large: 1.375rem;
-        --padding-section: 6rem;
-        /* 96px */
-    }
-}
-
-/* body definitions */
+/*
+    Body definitions
+    - Does not change below
+    - Open typography.css file to change the values
+*/
 body {
     font-family: var(--font-family);
     font-size: var(--font-size);
@@ -206,13 +23,17 @@ body {
 }
 
 /* global resets */
+
+* {
+    transition: all 0.3s;
+}
+
 *,
 *:before,
 *:after {
     box-sizing: border-box;
     margin: 0;
     outline: none;
-    transition: all 0.3s;
 }
 
 a {

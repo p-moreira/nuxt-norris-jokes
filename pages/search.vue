@@ -252,7 +252,6 @@ export default {
 }
 
 .o-search-content-header__wrapper {
-    /*  */
     padding: var(--space);
     justify-items: center;
 }
