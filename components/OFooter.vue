@@ -11,10 +11,7 @@
 
         <o-section>
 
-            <o-wrapper
-                centered-content
-                row-gap-small
-            >
+            <o-wrapper centered-content>
 
                 <p class="a-text a-footer__text">
                     by <a
@@ -67,7 +64,7 @@ export default {
 .o-footer {
     width: 100%;
     background-color: var(--color-primary);
-    padding: calc(var(--space) / 1.5);
+    padding: calc(var(--space) / 2);
     border-top-left-radius: 1.875rem;
     border-top-right-radius: 1.875rem;
 }
