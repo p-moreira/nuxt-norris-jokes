@@ -47,7 +47,7 @@ If you will host the code on Gitlab, the project includes all we need to setup t
 - /Dockerfile
 - /docker-compose.yml
 - /.dockerignore
-- /disabled.gitlab-ci.yml (change to .gitlab-ci.yml to trigger the automatic deploy)
+- /.gitlab-ci.yml (change to disabled.gitlab-ci.yml to turn-off the automatic deploy on gitlab)
 - /nginx (if you want to deploy using nginx proxy server)
 
 ## How to setup the app social sharing and SEO metadata
@@ -65,7 +65,7 @@ twitterUser: '@pmoreirabr'
 
 ## How to change or to add the funny loading messages
 
-When wainting for the search results, the app shows a message in a dramatic black screen.
+When waiting for the search results, the app shows a message in a dramatic black screen.
 
 You can change the messages or you can add as many messages you want.
 
