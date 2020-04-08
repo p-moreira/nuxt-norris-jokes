@@ -1,4 +1,4 @@
-import Config from '@/common/config.js'
+import Config from './common/config.js'
 
 export default {
     mode: 'universal',
