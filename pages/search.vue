@@ -85,6 +85,7 @@ export default {
     },
 
     async asyncData ({ $http, query, redirect, error }) {
+        console.log('asyncdata')
         const searchText = query.q
 
         // If there is no search query param, or
@@ -109,6 +110,7 @@ export default {
                 // }
 
                 // If it is an 'I am lucky' search, return the first result
+                console.log(query.l)
                 if (query.l && jokesData.total) {
                     return {
                         jokes: [jokesData.result[0]],
@@ -188,6 +190,7 @@ export default {
 </script>
 
 <style scoped>
+/* o-search-content__body component */
 @media screen and (min-width: 600px) {
     .o-search-content__body {
         display: block;
