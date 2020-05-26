@@ -1,6 +1,9 @@
-![Nuxt Norris Jokes](https://gitlab.com/pmoreira/nuxt-norris-jokes/-/raw/af59b6f275478ed3e7c5e5ffb19ef6cbfea9b1b8/assets/image-chuck-norris-xs.png "Logo")
+![Chuck Norris](https://raw.githubusercontent.com/p-moreira/nuxt-norris-jokes/master/assets/image-chuck-norris-xs.png)
 
 # Nuxt Norris Jokes
+
+> I migrated this project from my Gitlab private repository, so there is some gitlab CI/CD related files!
+> All push to this repository will trigger the gitlab CI/CD from the gitlab repository and deploy to https://norrisjokes.firenzze.com
 
 Nuxtjs web app to search for Chuck Norris jokes from the chucknorris.io API.
 
